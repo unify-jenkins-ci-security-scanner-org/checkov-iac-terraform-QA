@@ -13,9 +13,9 @@ pipeline {
         PRISMA_API_URL = ""
     }
 
-  triggers {
-        cron '50 00 * * 1-5' // Runs at 12:50 on every day-of-week from Monday through Friday
-         }
+  // triggers {
+  //       cron '50 00 * * 1-5' // Runs at 12:50 on every day-of-week from Monday through Friday
+  //        }
 
     stages {
         // Step 1: Download and set up prebuilt Python binary
