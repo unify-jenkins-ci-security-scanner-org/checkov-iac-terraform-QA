@@ -106,10 +106,20 @@ pipeline {
         }
     }
     }
+    stage('Security Scan') {
+            steps {
+                registerSecurityScan(
+                    // Security Scan to include
+                    artifacts: "results.sarif",
+                    format: "sarif",
+                    archive: true
+                )
+            }
+        }
 
-   post {
-    always {
-        archiveArtifacts artifacts: "terragoat/results.sarif", fingerprint: true
-    }
-}
+//    post {
+//     always {
+//         archiveArtifacts artifacts: "terragoat/results.sarif", fingerprint: true
+//     }
+// }
 }
