@@ -99,7 +99,7 @@ pipeline {
             steps {
                 registerSecurityScan(
                     // Security Scan to include
-                    artifacts: "results.sarif",
+                    artifacts: "$CHECKOV_TARGET_DIR/results.sarif",
                     format: "sarif",
                     archive: true
                 )
